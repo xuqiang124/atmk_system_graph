@@ -6,6 +6,7 @@ import logging
 from datetime import datetime
 import pytz
 from sklearn.model_selection import KFold, train_test_split
+from utils import build_label_relation_matrix
 
 from models import trainer
 import utils
@@ -76,6 +77,16 @@ if __name__ == '__main__':
     logging.info('=====Start=====')
     kf = KFold(n_splits=5,shuffle=True,random_state=3407)
     fold_results = []
+
+     # 使用完整训练集构建基础关系矩阵
+    base_labels_relation = utils.build_label_relation_matrix(
+       y_train1, 
+       num_classes=config.num_classes_list[-1],
+       threshold=config.get('label_relation_threshold', 0.1),
+       symmetric=config.get('label_relation_symmetric', False)
+    )
+    config.labels_relation = base_labels_relation
+    print(base_labels_relation)
     
     for k, (train, val) in enumerate(kf.split(X_train1, y_train1)):
         X_train, X_val, X_train_mask,X_val_mask, y_train, y_val = X_train1[train], X_train1[val],X_train_mask1[train],X_train_mask1[val],y_train1[train], y_train1[val]

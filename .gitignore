@@ -1,0 +1,35 @@
+# 忽略日志文件夹
+logs/
+
+# 忽略Python缓存文件
+__pycache__/
+*.py[cod]
+*$py.class
+
+# 忽略模型检查点文件
+*.h5
+*.ckpt
+*.pt
+
+# 忽略数据文件
+*.csv
+*.tsv
+*.json
+*.pkl
+*.npy
+*.npz
+
+# 忽略系统文件
+.DS_Store
+.vscode/
+.idea/
+
+# 忽略环境文件
+.env
+.venv
+env/
+venv/
+ENV/
+
+# 忽略Jupyter Notebook
+.ipynb_checkpoints
