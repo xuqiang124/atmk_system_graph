@@ -5,7 +5,7 @@ from keras.callbacks import TensorBoard, EarlyStopping, ModelCheckpoint, CSVLogg
 
 from .roberta import Classifier
 from .lcm import LabelConfusionModel
-from .evaluation_metrics1 import basic_metrics, lcm_metrics
+from .evaluation_metrics import basic_metrics, lcm_metrics
 
 np.random.seed(3407)
 

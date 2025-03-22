@@ -82,7 +82,7 @@ if __name__ == '__main__':
     base_labels_relation = utils.build_label_relation_matrix(
        y_train1, 
        num_classes=config.num_classes_list[-1],
-       threshold=config.get('label_relation_threshold', 0.1),
+       threshold=config.get('label_relation_threshold', 0.5),
        symmetric=config.get('label_relation_symmetric', False)
     )
     config.labels_relation = base_labels_relation

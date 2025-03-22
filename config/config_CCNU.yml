@@ -9,3 +9,5 @@ hidden_size: 768 # roberta
 num_classes_list: [98]
 l_patience: 10  # patience for early stopping
 b_patience: 10 # patience for basic model with a bigger patience
+label_relation_threshold: 0.5  # 标签关系阈值
+label_relation_symmetric: false  # 标签关系对称性
